@@ -59,6 +59,10 @@
   ```
 
 ### 3. Run ELT Pipeline
+- python -m venv venv
+- venv\Scripts\activate
+- pip install -r requirements.txt
+
 - Run ELT Pipeline using main script :
   ```
   python3 elt_main.py
