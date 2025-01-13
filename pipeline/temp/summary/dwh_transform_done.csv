@@ -1,0 +1,2 @@
+step,process,status,source,table_name,etl_date
+warehouse | transform,transform,success,raw schema,,2025-01-13 17:44:31

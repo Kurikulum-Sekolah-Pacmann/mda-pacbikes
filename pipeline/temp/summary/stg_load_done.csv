@@ -1,0 +1,20 @@
+step,process,status,source,table_name,etl_date
+staging,load,success,api,currency,2025-01-13 17:44:01
+staging,load,success,database,person,2025-01-13 17:44:01
+staging,load,success,database,employee,2025-01-13 17:44:01
+staging,load,success,database,product,2025-01-13 17:44:01
+staging,load,success,database,shipmethod,2025-01-13 17:44:02
+staging,load,success,database,currencyrate,2025-01-13 17:44:02
+staging,load,success,database,salesreason,2025-01-13 17:44:02
+staging,load,success,database,salesterritory,2025-01-13 17:44:02
+staging,load,success,database,specialoffer,2025-01-13 17:44:02
+staging,load,success,database,salesperson,2025-01-13 17:44:02
+staging,load,success,database,store,2025-01-13 17:44:02
+staging,load,success,database,customer,2025-01-13 17:44:02
+staging,load,success,database,specialofferproduct,2025-01-13 17:44:02
+staging,load,success,database,salespersonquotahistory,2025-01-13 17:44:03
+staging,load,success,database,salesterritoryhistory,2025-01-13 17:44:03
+staging,load,success,database,shoppingcartitem,2025-01-13 17:44:03
+staging,load,success,database,salesorderheader,2025-01-13 17:44:03
+staging,load,success,database,salesorderdetail,2025-01-13 17:44:03
+staging,load,success,database,salesorderheadersalesreason,2025-01-13 17:44:03

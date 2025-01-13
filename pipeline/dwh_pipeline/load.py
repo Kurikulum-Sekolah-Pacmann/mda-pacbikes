@@ -28,7 +28,7 @@ class Load_DWH(luigi.Task):
     def run(self):
          
         # Configure logging
-        logging.basicConfig(filename = f'{DIR_TEMP_LOG}/wh/logs.log', 
+        logging.basicConfig(filename = f'{DIR_LOG}/logs.log', 
                             level = logging.INFO, 
                             format = '%(asctime)s - %(levelname)s - %(message)s')
 

@@ -1,5 +1,8 @@
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE SCHEMA IF NOT EXISTS final AUTHORIZATION postgres;
 CREATE SCHEMA raw;
-CREATE SCHEMA final;
+
 CREATE TABLE raw.shipmethod (
     shipmethodid integer NOT NULL,
     name text NOT NULL,
