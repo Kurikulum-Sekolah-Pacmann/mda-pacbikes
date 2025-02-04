@@ -9,6 +9,22 @@ models:
         tests:
           - not_null
           - dbt_constraints.primary_key
+  - name: dim_product
+    description: "Dimension table from product staging"
+    columns:
+      - name: product_id
+        description: "Product Identifier"
+        tests:
+          - not_null
+
+      - name: standard_cost
+        description: "Standard cost of the product"
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: ["product_id", "standard_cost"]
+
   - name: dim_currency
     description: "Dimension table from currency staging"
     columns:
@@ -16,6 +32,7 @@ models:
         description: "Primary key for currency"
         tests:
           - not_null
+          - unique
           - dbt_constraints.primary_key
 
   - name: dim_sales_territory
@@ -25,6 +42,7 @@ models:
         description: "Surrogate Key for sales_teritory"
         tests:
           - not_null
+          - unique
           - dbt_constraints.primary_key
 
       - name: nk_territory
@@ -38,6 +56,7 @@ models:
         description: "Surrogate Key for sales_person"
         tests:
           - not_null
+          - unique
           - dbt_constraints.primary_key
 
       - name: nk_sales_person
@@ -58,6 +77,7 @@ models:
         description: "Surrogate Key for store"
         tests:
           - not_null
+          - unique
           - dbt_constraints.primary_key
 
       - name: nk_store
@@ -77,6 +97,7 @@ models:
         description: "Surrogate Key for customer"
         tests:
           - not_null
+          - unique
           - dbt_constraints.primary_key
 
       - name: nk_customer
@@ -89,7 +110,7 @@ models:
           - dbt_constraints.foreign_key:
               pk_table_name: ref('dim_store')
               pk_column_name: store_id
-      - name: sales_terr_id
+      - name: sales_teritory_id
         description: "Foreign Key to sales_teritory"
         tests:
           - dbt_constraints.foreign_key:
@@ -103,6 +124,7 @@ models:
         description: "Surrogate Key for ship_method"
         tests:
           - not_null
+          - unique
           - dbt_constraints.primary_key
 
       - name: nk_ship_method
@@ -116,6 +138,7 @@ models:
         description: "Surrogate Key for special_offer"
         tests:
           - not_null
+          - unique
           - dbt_constraints.primary_key
 
       - name: nk_special_offer
@@ -129,6 +152,7 @@ models:
         description: "Surrogate Key for sales_reason"
         tests:
           - not_null
+          - unique
           - dbt_constraints.primary_key
 
       - name: nk_sales_reason
@@ -142,6 +166,7 @@ models:
         description: "Surrogate Key for currency_rate"
         tests:
           - not_null
+          - unique
           - dbt_constraints.primary_key
 
       - name: nk_currency_rate
@@ -167,6 +192,7 @@ models:
         description: "Primary Key for fact_order"
         tests:
           - not_null
+          - unique
           - dbt_constraints.primary_key
       - name: order_date
         description: "Order Date"
@@ -222,3 +248,9 @@ models:
           - dbt_constraints.foreign_key:
               pk_table_name: ref('dim_product')
               pk_column_name: product_id
+      - name: currency_rate_id
+        description: "Foreign Key to currency_rate"
+        tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('dim_currency_rate')
+              pk_column_name: currency_rate_id

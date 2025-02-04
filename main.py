@@ -45,6 +45,6 @@ if __name__ == "__main__":
         directory = f'{DIR_TEMP_DATA}/stg'
     )
 
-    # delete_temp(
-    #     directory = f'{DIR_TEMP_LOG}'
-    # )
+    delete_temp(
+        directory = f'{DIR_TEMP_LOG}'
+    )

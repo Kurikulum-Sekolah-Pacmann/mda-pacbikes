@@ -51,16 +51,17 @@ class Transform(luigi.Task):
                         "table_name": None,
                         "etl_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Current timestamp
                     }
-        except Exception:
+        except Exception as e:
             logging.error(f"Transform to All Dimensions and Fact Tables - FAILED")
         
             log_msg = {
                         "step" : "warehouse | transform",
                         "process":"transform",
-                        "status": f"success {DIR_DBT_TRANSFORM}",
+                        "status": f"failed",
                         "source": "raw schema",
                         "table_name": None,
-                        "etl_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Current timestamp
+                        "etl_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),  # Current timestamp
+                        "error_msg": str(e)
                     }
             
             logging.error("Transform Tables - FAILED")  

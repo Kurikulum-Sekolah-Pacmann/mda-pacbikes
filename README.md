@@ -62,7 +62,7 @@
 - python -m venv venv
 - venv\Scripts\activate
 - pip install -r requirements.txt
--  dbt deps, dbt run
+-  dbt deps, dbt run, dbt snapshots, dbt test
 - Run ELT Pipeline using main script :
   ```
   python3 elt_main.py
